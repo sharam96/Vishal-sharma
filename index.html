@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>vishal-sharma</title>
+  <link rel="icon" type="image/x-icon" href="./10844984.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Poppins:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+  body {background-color: rgb(0,0,33); color: white; font-family: "Poppins", sans-serif;}
+  #particles-js {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: rgb(0,0,33);}
+  
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    height: 85px; background-color: rgba(18,18,62,0.8);
+    position: sticky; top: 0; z-index: 999;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  .left {
+    font-size: 2rem; animation: typewriter 2.5s steps(20) 1s 1 normal both;
+    white-space: nowrap; 
+    max-width: 50%;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  
+  .hamburger { display: none; flex-direction: column; cursor: pointer; }
+  .hamburger div { width: 25px; height: 3px; background: white; margin: 4px 0; }
+  
+  .nav-links {
+    display: flex; list-style: none; transition: max-height 0.4s ease-out;
+    overflow: hidden; align-items: center;
+  }
+  
+  .nav-links li { list-style: none; margin: 0 20px; }
+  .nav-links li a { text-decoration: none; color: white; transition: color 0.3s; }
+  .nav-links li a:hover { color: rgb(153,153,226); font-size: 1.05rem; }
+  
+  @keyframes typewriter {
+    from { width: 0; overflow: hidden; border-right: 2px solid white;}
+    to { width: 100%; border-right: 2px solid transparent;}
+  }
+  
+  @media (max-width: 1024px) {
+    .left { font-size: 1.6rem; }
+  }
+  
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column; align-items: flex-start; height: auto;
+    }
+    .left {
+      font-size: 1.4rem;
+      max-width: 100%; margin-bottom: 10px; white-space: normal;
+    }
+    .hamburger { display: flex; }
+    .nav-links {
+      flex-direction: column; width: 100%; background: rgba(18,18,62,0.95);
+      max-height: 0; margin-top: 0;
+    }
+    .nav-links.active { max-height: 300px; }
+    .nav-links li { margin: 15px 0; text-align: center; }
+  }
+  
+  .firstsection {display: flex; justify-content: space-around; align-items: center; margin: 150px 0; flex-wrap: wrap;}
+  .firstsection>div {width: 40%;}
+  .leftsection {font-size: 2.5rem;}
+  .black, #element {color: rgb(170,107,228);}
+  .rightsection img {width: 100%;}
+  .download-btn {display: inline-block; margin-top: 20px; padding: 12px 25px; background-color: #9c97f1; color: white; text-decoration: none; font-weight: bold; border-radius: 8px; transition: background 0.3s;}
+  .download-btn:hover {background-color: #7a75f0;}
+  main hr {border: 0; background: #9c97f1; height: 1.2px; margin: 50px 84px;}
+  .secondsection {max-width: 80vw; margin: 100px auto; text-align: center;}
+  .secondsection h1 {font-size: 3.2rem; margin-bottom: 60px;}
+  .thirdsection {max-width: 80vw; margin: 100px auto;}
+  .thirdsection h1 {text-align: center; font-size: 3.2rem; margin-bottom: 50px;}
+  .flexbox {display: flex; flex-direction: column; align-items: center; gap: 40px;}
+  .flex1, .flex2, .flex3, .flex4 {width: 80%; text-align: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;}
+  .flex1:hover, .flex2:hover, .flex3:hover, .flex4:hover {transform: translateY(-10px); box-shadow: 0 0 20px rgba(156,151,241,0.6);}
+  .simple {text-decoration: none; color: white;}
+  .contact-section {max-width: 80vw; margin: 100px auto; text-align: center;}
+  .contact-section h1 {font-size: 3.2rem; margin-bottom: 30px;}
+  footer {text-align: center; margin-top: 50px; padding: 20px;}
+  .linkedin {height: 50px; width: 50px; margin: 10px;}
+  footer img.linkedin {filter: brightness(0) invert(1); transition: filter 0.3s;}
+  footer img.linkedin:hover {filter: brightness(0) invert(1) drop-shadow(0 0 5px #9c97f1);}
+
+  .skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .skill-tag {
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.3s;
+    user-select: none;
+  }
+
+  .skill-tag:hover {
+    background-color: rgba(156, 151, 241, 0.4);
+    transform: scale(1.05);
+  }
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <header>
+  <nav>
+    <div class="left">Vishal Sharma</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="./Resume.pdf">Resume</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section class="firstsection" data-aos="fade-up">
+      <div class="leftsection">
+        Hey, I'm <span class="black">Vishal Sharma</span><br>
+        <div>Currently Pursuing BCA at IITM Janakpuri.</div>
+        <div>I'm a passionate <span id="element"></span></div>
+        <a class="download-btn" href="./Resume.pdf" download>Download Resume</a>
+      </div>
+      <div class="rightsection">
+        <img src="./3426526-removebg-preview.png" alt="Hero Image"/>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="secondsection" data-aos="fade-left">
+      <h1>Skills</h1>
+      <div class="skills-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Bootstrap</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">Node.js</span>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="thirdsection" id="projects" data-aos="fade-up">
+      <h1>Projects</h1>
+      <div class="flexbox">
+        <div class="flex1"><a class="simple" href="https://sharam96.github.io/tastyfood/"><h2>🔗 Food Ordering Website</h2></a><p>Preview of an ordering site with separate menus.</p></div>
+        <div class="flex2"><a class="simple" href="https://sharam96.github.io/Html-Dice/"><h2>🔗 Dice Rolling Game</h2></a><p>Simulates a dice game on refresh.</p></div>
+        <div class="flex3"><a class="simple" href="https://sharam96.github.io/tindog/"><h2>🔗 Tindog Website</h2></a><p>Tinder-like app concept for dogs 🐶.</p></div>
+        <div class="flex4"><a class="simple" href="https://sharam96.github.io/drumkit/"><h2>🔗 Drum Kit</h2></a><p>Virtual drum sounds on key press 🥁.</p></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" data-aos="fade-up">
+      <h1>Contact Me</h1>
+      <form action="https://formspree.io/f/xrbkrbdq" method="POST" style="max-width:600px; margin:auto;">
+        <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:10px;margin-bottom:10px;">
+        <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:10px;margin-bottom:10px;">
+        <textarea name="message" placeholder="Your Message" required style="width:100%;padding:10px;margin-bottom:10px;"></textarea>
+        <button type="submit" style="background:#9c97f1;color:white;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://www.linkedin.com/in/vishal-sharma-524715226/"><img class="linkedin" src="./linked-in.svg" alt="LinkedIn"/></a>
+    <a href="https://twitter.com/VishalS14120417"><img class="linkedin" src="./twitter.svg" alt="Twitter"/></a>
+    <a href="https://github.com/sharam96?tab=repositories"><img class="linkedin" src="./github.svg" alt="GitHub"/></a>
+    <p>Vishal Sharma ©️</p>
+  </footer>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    AOS.init();
+    new Typed('#element', { strings: ['Web Developer'], typeSpeed: 40 });
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {"value": 60,"density": {"enable":true,"value_area":800}},
+        "color": {"value":"#9c97f1"},
+        "shape": {"type":"circle"},
+        "opacity": {"value":0.5,"random":true},
+        "size": {"value":4,"random":true},
+        "line_linked": {"enable":true,"distance":150,"color":"#9c97f1","opacity":0.4,"width":1},
+        "move": {"enable":true,"speed":2,"direction":"none","out_mode":"out"}
+      }
+    });
+
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
