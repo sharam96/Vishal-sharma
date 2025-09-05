@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Vishal Sharma</title>
+  <link rel="icon" type="image/x-icon" href="./10844984.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Poppins:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    body {
+      background-color: rgb(0,0,33);
+      color: white;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+    }
+    #particles-js {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:-1;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      background-color: rgba(18,18,62,0.8);
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .left {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      transition: max-height 0.4s ease-out;
+    }
+    .nav-links li {
+      margin: 0 15px;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: rgb(153,153,226);
+    }
+
+    /* Responsive Navbar */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background: rgba(18,18,62,0.95);
+        max-height: 0;
+        overflow: hidden;
+      }
+      .nav-links.active {
+        max-height: 400px;
+        padding: 15px 0;
+      }
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+
+    /* Page Content */
+    .container {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    h2 {
+      color:#9c97f1;
+      margin-top: 40px;
+    }
+    p {
+      line-height: 1.8;
+    }
+    ul {
+      margin-top: 15px;
+      line-height: 1.8;
+    }
+
+    /* Skill Tags */
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .skill-tag {
+      padding: 10px 18px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+    }
+    footer img.linkedin {
+      height: 40px;
+      width: 40px;
+      margin: 10px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s;
+    }
+    footer img.linkedin:hover {
+      filter: brightness(0) invert(1) drop-shadow(0 0 5px #9c97f1);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <header>
+    <nav>
+      <div class="left">Vishal Sharma</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Me</a></li>
+        <li><a href="./Vishal_Sharma_Icon_Resume.pdf">Resume</a></li>
+        <li><a href="./index.html#projects">Projects</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" data-aos="fade-up">
+    <h1>About Me</h1>
+    <p>
+      I'm <b>Vishal Sharma</b>, a motivated <b>BCA student</b> from IITM Janakpuri, Delhi, with hands-on
+      experience in frontend and backend development. I specialize in 
+      <b>JavaScript, Node.js, Express, and PostgreSQL</b>.  
+      With internship experience in building real-world HRMS applications, I bring strong problem-solving 
+      and collaboration skills to every project.
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-tags">
+      <span class="skill-tag">HTML</span>
+      <span class="skill-tag">CSS</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">Node.js</span>
+      <span class="skill-tag">Express.js</span>
+      <span class="skill-tag">REST APIs</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">PostgreSQL</span>
+    </div>
+
+    <h2>Tools</h2>
+    <div class="skills-tags">
+      <span class="skill-tag">Git</span>
+      <span class="skill-tag">GitHub</span>
+      <span class="skill-tag">VS Code</span>
+      <span class="skill-tag">Postman</span>
+    </div>
+
+    <h2>Soft Skills</h2>
+    <div class="skills-tags">
+      <span class="skill-tag">Teamwork</span>
+      <span class="skill-tag">Communication</span>
+      <span class="skill-tag">Problem-Solving</span>
+      <span class="skill-tag">Collaboration</span>
+    </div>
+
+    <h2>Projects</h2>
+    <ul>
+      <li><b>HRMS System</b> – Built during internship with frontend design + backend APIs in Node.js & PostgreSQL.</li>
+      <li><b>Blog Web Application</b> – Full CRUD blog app using Express.js and PostgreSQL.</li>
+      <li><b>Live Weather App</b> – Real-time weather updates using OpenWeather API.</li>
+      <li><b>Book Library Management</b> – Fetch books via Open API with ISBN, ratings & database integration.</li>
+      <li><b>Portfolio Website</b> – Personal portfolio showcasing skills and projects.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <a href="https://www.linkedin.com/in/vishal-sharma-524715226/"><img class="linkedin" src="./linked-in.svg" alt="LinkedIn"/></a>
+    <a href="https://twitter.com/VishalS14120417"><img class="linkedin" src="./twitter.svg" alt="Twitter"/></a>
+    <a href="https://github.com/sharam96?tab=repositories"><img class="linkedin" src="./github.svg" alt="GitHub"/></a>
+    <p>Vishal Sharma ©️</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    AOS.init();
+    particlesJS("particles-js", {
+      "particles": {
+        "number":{"value":60},
+        "color":{"value":"#9c97f1"},
+        "shape":{"type":"circle"},
+        "opacity":{"value":0.5,"random":true},
+        "size":{"value":4,"random":true},
+        "line_linked":{"enable":true,"distance":150,"color":"#9c97f1","opacity":0.4,"width":1},
+        "move":{"enable":true,"speed":2,"out_mode":"out"}
+      }
+    });
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
