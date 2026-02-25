@@ -4,17 +4,33 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me - Vishal Sharma</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>About Vishal Sharma - Web Developer & BCA Student</title>
+  <meta name="description" content="Learn more about Vishal Sharma - BCA student at IITM Janakpuri, skilled in MERN stack development with internship experience in HRMS applications."/>
+  <meta name="keywords" content="Vishal Sharma, about me, web developer, BCA student, IITM Janakpuri, MERN stack, portfolio"/>
+  <meta name="author" content="Vishal Sharma"/>
+  <meta name="robots" content="index, follow"/>
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="About Vishal Sharma - Web Developer"/>
+  <meta property="og:description" content="BCA student specializing in full-stack development with React, Node.js, and PostgreSQL"/>
+  <meta property="og:type" content="website"/>
+  
   <link rel="icon" type="image/x-icon" href="./10844984.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Poppins:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       background-color: rgb(0,0,33);
       color: white;
       font-family: "Poppins", sans-serif;
-      margin: 0;
+      overflow-x: hidden;
+      width: 100%;
     }
+    
     #particles-js {
       position: fixed;
       top:0; left:0;
@@ -22,96 +38,175 @@
       z-index:-1;
     }
 
-    /* Navbar */
+    /* Navbar - Same as index with fixed hamburger */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 70px;
+      height: 85px;
       background-color: rgba(18,18,62,0.8);
-      padding: 0 20px;
+      padding: 0 5%;
       position: sticky;
       top: 0;
       z-index: 999;
+      backdrop-filter: blur(5px);
+      width: 100%;
     }
+    
     .left {
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 4vw, 1.8rem);
       font-weight: 600;
     }
+    
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      z-index: 1000;
+      padding: 5px;
     }
+    
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
       margin: 4px 0;
+      transition: 0.3s;
+      border-radius: 3px;
     }
+    
     .nav-links {
       display: flex;
       list-style: none;
       align-items: center;
-      transition: max-height 0.4s ease-out;
     }
+    
     .nav-links li {
       margin: 0 15px;
     }
+    
     .nav-links li a {
       text-decoration: none;
       color: white;
-      transition: color 0.3s;
+      transition: all 0.3s;
+      position: relative;
     }
+    
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #9c97f1;
+      transition: width 0.3s;
+    }
+    
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+    
     .nav-links li a:hover {
       color: rgb(153,153,226);
     }
 
-    /* Responsive Navbar */
+    /* Mobile Navigation - Fixed */
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
+      nav { 
+        height: 70px;
+        position: relative;
       }
-      .hamburger {
+      .left { 
+        white-space: nowrap; 
+        max-width: 70%;
+        font-size: 1.4rem;
+      }
+      .hamburger { 
         display: flex;
+        position: absolute;
+        right: 5%;
+        top: 20px;
       }
       .nav-links {
-        flex-direction: column;
+        position: fixed; 
+        top: 70px; 
+        left: 0; 
         width: 100%;
-        background: rgba(18,18,62,0.95);
-        max-height: 0;
-        overflow: hidden;
+        flex-direction: column; 
+        background: rgba(18,18,62,0.98);
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.4s ease-out;
+        backdrop-filter: blur(10px); 
+        padding: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        z-index: 998;
       }
-      .nav-links.active {
-        max-height: 400px;
-        padding: 15px 0;
+      .nav-links.active { 
+        max-height: 400px; 
+        padding: 20px 0;
       }
-      .nav-links li {
-        margin: 10px 0;
+      .nav-links li { 
+        margin: 12px 0; 
+        width: 100%; 
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease 0.1s;
+      }
+      .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav-links li a { 
+        display: block; 
+        padding: 8px 0;
+        font-size: 1.1rem;
+      }
+      .nav-links li a::after {
+        bottom: -2px;
       }
     }
 
     /* Page Content */
     .container {
       max-width: 1000px;
-      margin: 80px auto;
-      padding: 20px;
+      margin: 60px auto;
+      padding: 20px 5%;
+      width: 100%;
     }
+    
     h1 {
-      font-size: 3rem;
+      font-size: clamp(2.2rem, 6vw, 3rem);
       margin-bottom: 30px;
       text-align: center;
+      color: #9c97f1;
     }
+    
     h2 {
-      color:#9c97f1;
+      color: #9c97f1;
       margin-top: 40px;
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      border-bottom: 2px solid rgba(156,151,241,0.3);
+      padding-bottom: 10px;
     }
+    
     p {
       line-height: 1.8;
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      margin: 20px 0;
     }
+    
     ul {
       margin-top: 15px;
       line-height: 1.8;
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
     }
 
     /* Skill Tags */
@@ -121,28 +216,376 @@
       gap: 12px;
       margin-top: 20px;
     }
+    
     .skill-tag {
-      padding: 10px 18px;
+      padding: 10px 20px;
       background: rgba(255,255,255,0.08);
-      border-radius: 20px;
-      font-size: 0.95rem;
+      border-radius: 25px;
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      transition: all 0.3s;
+      cursor: default;
+    }
+    
+    .skill-tag:hover {
+      background: rgba(156,151,241,0.4);
+      transform: translateY(-3px);
     }
 
     /* Footer */
     footer {
       text-align: center;
       margin-top: 50px;
-      padding: 20px;
+      padding: 30px 20px;
+      background: rgba(18,18,62,0.3);
+      width: 100%;
     }
-    footer img.linkedin {
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    
+    .linkedin {
       height: 40px;
       width: 40px;
-      margin: 10px;
+      transition: all 0.3s;
       filter: brightness(0) invert(1);
-      transition: filter 0.3s;
     }
-    footer img.linkedin:hover {
-      filter: brightness(0) invert(1) drop-shadow(0 0 5px #9c97f1);
+    
+    .linkedin:hover {
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px #9c97f1);
+      transform: translateY(-3px);
+    }
+
+    /* Profile Section */
+    .profile-highlight {
+      background: rgba(156,151,241,0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      border-left: 4px solid #9c97f1;
+    }
+
+    /* Resume Details */
+    .resume-details {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px 0;
+    }
+    
+    .resume-details h3 {
+      color: #9c97f1;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+    
+    .resume-details ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .resume-details li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(156,151,241,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .resume-details li:before {
+      content: "•";
+      color: #9c97f1;
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .container { margin: 40px auto; }
+      ul { padding-left: 15px; }
+      .resume-details { padding: 20px; }
+    }
+
+    /* Active link style */
+    .nav-links li a.active {
+      color: #9c97f1;
+    }
+
+    /* ===== CHATBOT STYLES (SAME AS INDEX) ===== */
+    .chatbot-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .chatbot-button {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: #9c97f1;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 20px rgba(156,151,241,0.4);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .chatbot-button:hover {
+      transform: scale(1.1);
+      background: #7a75f0;
+      box-shadow: 0 8px 25px rgba(156,151,241,0.6);
+    }
+
+    .chatbot-button svg {
+      width: 35px;
+      height: 35px;
+      fill: white;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(156,151,241,0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(156,151,241,0); }
+      100% { box-shadow: 0 0 0 0 rgba(156,151,241,0); }
+    }
+
+    .chatbot-window {
+      position: absolute;
+      bottom: 85px;
+      right: 0;
+      width: 350px;
+      height: 500px;
+      background: rgba(18,18,62,0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(156,151,241,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chatbot-window.active {
+      display: flex;
+    }
+
+    .chatbot-header {
+      background: rgba(156,151,241,0.2);
+      padding: 20px;
+      border-bottom: 1px solid rgba(156,151,241,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-header h3 {
+      color: #9c97f1;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chatbot-header h3 svg {
+      width: 20px;
+      height: 20px;
+      fill: #9c97f1;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close-chat:hover {
+      color: #9c97f1;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 15px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      animation: messageSlide 0.3s ease;
+    }
+
+    @keyframes messageSlide {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bot-message {
+      background: rgba(156,151,241,0.15);
+      border: 1px solid rgba(156,151,241,0.3);
+      align-self: flex-start;
+      border-bottom-left-radius: 5px;
+    }
+
+    .user-message {
+      background: #9c97f1;
+      align-self: flex-end;
+      border-bottom-right-radius: 5px;
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 5px;
+      padding: 12px 16px;
+      background: rgba(156,151,241,0.15);
+      border: 1px solid rgba(156,151,241,0.3);
+      border-radius: 15px;
+      width: fit-content;
+      border-bottom-left-radius: 5px;
+    }
+
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #9c97f1;
+      border-radius: 50%;
+      animation: typing 1s infinite ease-in-out;
+    }
+
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-10px); }
+    }
+
+    .chat-input-area {
+      padding: 20px;
+      border-top: 1px solid rgba(156,151,241,0.3);
+      display: flex;
+      gap: 10px;
+    }
+
+    .chat-input-area input {
+      flex: 1;
+      padding: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(156,151,241,0.3);
+      border-radius: 25px;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .chat-input-area input:focus {
+      border-color: #9c97f1;
+      box-shadow: 0 0 10px rgba(156,151,241,0.3);
+    }
+
+    .chat-input-area input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .chat-input-area button {
+      background: #9c97f1;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .chat-input-area button:hover {
+      background: #7a75f0;
+      transform: scale(1.05);
+    }
+
+    .chat-input-area button svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .chat-input-area button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 20px;
+      border-top: 1px solid rgba(156,151,241,0.2);
+    }
+
+    .quick-reply-btn {
+      background: rgba(156,151,241,0.15);
+      border: 1px solid rgba(156,151,241,0.3);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .quick-reply-btn:hover {
+      background: #9c97f1;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile responsive for chatbot */
+    @media (max-width: 480px) {
+      .chatbot-container {
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .chatbot-button {
+        width: 55px;
+        height: 55px;
+      }
+      
+      .chatbot-button svg {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .chatbot-window {
+        width: 300px;
+        height: 450px;
+        bottom: 75px;
+      }
     }
   </style>
 </head>
@@ -158,8 +601,8 @@
       </div>
       <ul class="nav-links">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About Me</a></li>
-        <li><a href="./Vishal_Sharma_Icon_Resume.pdf">Resume</a></li>
+        <li><a href="./about.html" class="active">About Me</a></li>
+        <li><a href="./Vishal_Sharma_Icon_Resume (2) (1).pdf" download>Resume</a></li>
         <li><a href="./index.html#projects">Projects</a></li>
         <li><a href="./index.html#contact">Contact</a></li>
       </ul>
@@ -168,77 +611,349 @@
 
   <main class="container" data-aos="fade-up">
     <h1>About Me</h1>
-    <p>
-      I'm <b>Vishal Sharma</b>, a motivated <b>BCA student</b> from IITM Janakpuri, Delhi, with hands-on
-      experience in frontend and backend development. I specialize in 
-      <b>JavaScript, Node.js, Express, and PostgreSQL</b>.  
-      With internship experience in building real-world HRMS applications, I bring strong problem-solving 
-      and collaboration skills to every project.
-    </p>
+    
+    <div class="profile-highlight" data-aos="fade-right">
+      <p>
+        👋 Hi, I'm <strong>Vishal Sharma</strong>, a passionate <strong>BCA student</strong> at IITM Janakpuri, Delhi 
+        with a strong focus on full-stack web development. I love building responsive, user-friendly applications 
+        that solve real-world problems.
+      </p>
+    </div>
 
-    <h2>Technical Skills</h2>
-    <div class="skills-tags">
-      <span class="skill-tag">HTML</span>
-      <span class="skill-tag">CSS</span>
-      <span class="skill-tag">JavaScript</span>
+    <h2 data-aos="fade-left">💻 Technical Skills</h2>
+    <div class="skills-tags" data-aos="fade-up">
+      <span class="skill-tag">HTML5</span>
+      <span class="skill-tag">CSS3</span>
+      <span class="skill-tag">JavaScript (ES6+)</span>
       <span class="skill-tag">React.js</span>
       <span class="skill-tag">Node.js</span>
       <span class="skill-tag">Express.js</span>
       <span class="skill-tag">REST APIs</span>
-      <span class="skill-tag">SQL</span>
       <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">MongoDB</span>
+      <span class="skill-tag">Bootstrap</span>
     </div>
 
-    <h2>Tools</h2>
-    <div class="skills-tags">
+    <h2 data-aos="fade-left">🛠️ Tools & Technologies</h2>
+    <div class="skills-tags" data-aos="fade-up">
       <span class="skill-tag">Git</span>
       <span class="skill-tag">GitHub</span>
       <span class="skill-tag">VS Code</span>
       <span class="skill-tag">Postman</span>
+      <span class="skill-tag">npm</span>
+      <span class="skill-tag">Chrome DevTools</span>
     </div>
 
-    <h2>Soft Skills</h2>
-    <div class="skills-tags">
-      <span class="skill-tag">Teamwork</span>
+    <h2 data-aos="fade-left">🤝 Soft Skills</h2>
+    <div class="skills-tags" data-aos="fade-up">
+      <span class="skill-tag">Team Collaboration</span>
       <span class="skill-tag">Communication</span>
       <span class="skill-tag">Problem-Solving</span>
-      <span class="skill-tag">Collaboration</span>
+      <span class="skill-tag">Time Management</span>
+      <span class="skill-tag">Adaptability</span>
+      <span class="skill-tag">Critical Thinking</span>
     </div>
 
-    <h2>Projects</h2>
-    <ul>
-      <li><b>HRMS System</b> – Built during internship with frontend design + backend APIs in Node.js & PostgreSQL.</li>
-      <li><b>Blog Web Application</b> – Full CRUD blog app using Express.js and PostgreSQL.</li>
-      <li><b>Live Weather App</b> – Real-time weather updates using OpenWeather API.</li>
-      <li><b>Book Library Management</b> – Fetch books via Open API with ISBN, ratings & database integration.</li>
-      <li><b>Portfolio Website</b> – Personal portfolio showcasing skills and projects.</li>
+    <h2 data-aos="fade-left">🚀 Projects</h2>
+    <ul data-aos="fade-up">
+      <li><strong>HRMS System</strong> – Built during internship with frontend design + backend APIs in Node.js & PostgreSQL. Implemented employee management features.</li>
+      <li><strong>Blog Web Application</strong> – Full CRUD blog app using Express.js and PostgreSQL with authentication and responsive design.</li>
+      <li><strong>Live Weather App</strong> – Real-time weather updates using OpenWeather API with geolocation and search functionality.</li>
+      <li><strong>Book Library Management</strong> – Fetch books via Open Library API with ISBN search, ratings & database integration.</li>
+      <li><strong>Portfolio Website</strong> – Personal portfolio showcasing skills, projects, and contact information with responsive design.</li>
     </ul>
+
+    <h2 data-aos="fade-left">🎓 Education</h2>
+    <div class="profile-highlight" data-aos="fade-up">
+      <p><strong>Bachelor of Computer Applications (BCA)</strong><br>
+      IITM Janakpuri, Delhi<br>
+      Currently pursuing with focus on web development and software engineering.</p>
+    </div>
+
+    <h2 data-aos="fade-left">💼 Experience</h2>
+    <div data-aos="fade-up">
+      <p><strong>Web Development Intern</strong><br>
+      Gained hands-on experience building HRMS applications, working with modern tech stack, and collaborating with development teams.</p>
+    </div>
   </main>
 
   <footer>
-    <a href="https://www.linkedin.com/in/vishal-sharma-524715226/"><img class="linkedin" src="./linked-in.svg" alt="LinkedIn"/></a>
-    <a href="https://twitter.com/VishalS14120417"><img class="linkedin" src="./twitter.svg" alt="Twitter"/></a>
-    <a href="https://github.com/sharam96?tab=repositories"><img class="linkedin" src="./github.svg" alt="GitHub"/></a>
-    <p>Vishal Sharma ©️</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/vishal-sharma-524715226/" target="_blank" rel="noopener noreferrer">
+        <img class="linkedin" src="./linked-in.svg" alt="LinkedIn Profile"/>
+      </a>
+      <a href="https://twitter.com/VishalS14120417" target="_blank" rel="noopener noreferrer">
+        <img class="linkedin" src="./twitter.svg" alt="Twitter Profile"/>
+      </a>
+      <a href="https://github.com/sharam96?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <img class="linkedin" src="./github.svg" alt="GitHub Profile"/>
+      </a>
+    </div>
+    <p>© Vishal Sharma. All rights reserved.</p>
   </footer>
+
+  <!-- CHATBOT SECTION -->
+  <div class="chatbot-container">
+    <button class="chatbot-button" id="chatbot-toggle" onclick="toggleChat()">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+      </svg>
+    </button>
+    
+    <div class="chatbot-window" id="chatbot-window">
+      <div class="chatbot-header">
+        <h3>
+          <svg viewBox="0 0 24 24">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+          </svg>
+          AI Assistant
+        </h3>
+        <button class="close-chat" onclick="toggleChat()">×</button>
+      </div>
+      
+      <div class="chat-messages" id="chat-messages">
+        <div class="message bot-message">
+          👋 Hi! I'm Vishal's AI assistant. How can I help you today?
+        </div>
+      </div>
+      
+      <div class="quick-replies" id="quick-replies">
+        <button class="quick-reply-btn" onclick="sendQuickReply('skills')">💻 Skills</button>
+        <button class="quick-reply-btn" onclick="sendQuickReply('projects')">🚀 Projects</button>
+        <button class="quick-reply-btn" onclick="sendQuickReply('contact')">📞 Contact</button>
+        <button class="quick-reply-btn" onclick="sendQuickReply('experience')">💼 Experience</button>
+      </div>
+      
+      <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()" id="send-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    AOS.init();
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+    
+    // Particles.js
     particlesJS("particles-js", {
       "particles": {
-        "number":{"value":60},
-        "color":{"value":"#9c97f1"},
-        "shape":{"type":"circle"},
-        "opacity":{"value":0.5,"random":true},
-        "size":{"value":4,"random":true},
-        "line_linked":{"enable":true,"distance":150,"color":"#9c97f1","opacity":0.4,"width":1},
-        "move":{"enable":true,"speed":2,"out_mode":"out"}
+        "number": {"value": 60},
+        "color": {"value":"#9c97f1"},
+        "shape": {"type":"circle"},
+        "opacity": {"value":0.5,"random":true},
+        "size": {"value":4,"random":true},
+        "line_linked": {"enable":true,"distance":150,"color":"#9c97f1","opacity":0.4,"width":1},
+        "move": {"enable":true,"speed":2,"out_mode":"out"}
       }
     });
+    
+    // Hamburger Menu Toggle - Fixed
     function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+      navLinks.classList.toggle('active');
+      
+      // Animate hamburger
+      const lines = hamburger.children;
+      if (navLinks.classList.contains('active')) {
+        lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        lines[1].style.opacity = '0';
+        lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        lines[0].style.transform = 'none';
+        lines[1].style.opacity = '1';
+        lines[2].style.transform = 'none';
+      }
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(event.target) && !hamburger.contains(event.target) && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        // Reset hamburger
+        const lines = hamburger.children;
+        lines[0].style.transform = 'none';
+        lines[1].style.opacity = '1';
+        lines[2].style.transform = 'none';
+      }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        nav.classList.remove('active');
+        // Reset hamburger
+        const lines = hamburger.children;
+        lines[0].style.transform = 'none';
+        lines[1].style.opacity = '1';
+        lines[2].style.transform = 'none';
+      });
+    });
+
+    // Set active link based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'about.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentPage || (linkPage.includes('about') && currentPage.includes('about'))) {
+        link.classList.add('active');
+      }
+    });
+
+    // ===== CHATBOT FUNCTIONALITY (SAME AS INDEX) =====
+    let isTyping = false;
+    
+    function toggleChat() {
+      const window = document.getElementById('chatbot-window');
+      const button = document.getElementById('chatbot-toggle');
+      window.classList.toggle('active');
+      
+      // Focus input when opened
+      if (window.classList.contains('active')) {
+        document.getElementById('user-input').focus();
+      }
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('user-input');
+      const message = input.value.trim();
+      
+      if (message === '' || isTyping) return;
+      
+      // Add user message
+      addMessage(message, 'user');
+      input.value = '';
+      
+      // Show typing indicator
+      showTypingIndicator();
+      
+      // Simulate AI response
+      setTimeout(() => {
+        removeTypingIndicator();
+        const response = getBotResponse(message);
+        addMessage(response, 'bot');
+      }, 1000);
+    }
+
+    function sendQuickReply(type) {
+      let message = '';
+      switch(type) {
+        case 'skills':
+          message = 'What are your skills?';
+          break;
+        case 'projects':
+          message = 'Tell me about your projects';
+          break;
+        case 'contact':
+          message = 'How can I contact you?';
+          break;
+        case 'experience':
+          message = 'What is your experience?';
+          break;
+        default:
+          message = type;
+      }
+      
+      document.getElementById('user-input').value = message;
+      sendMessage();
+    }
+
+    function addMessage(text, sender) {
+      const messagesContainer = document.getElementById('chat-messages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}-message`;
+      messageDiv.textContent = text;
+      messagesContainer.appendChild(messageDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+      isTyping = true;
+      const messagesContainer = document.getElementById('chat-messages');
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'typing-indicator';
+      typingDiv.id = 'typing-indicator';
+      typingDiv.innerHTML = '<span></span><span></span><span></span>';
+      messagesContainer.appendChild(typingDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      isTyping = false;
+      const indicator = document.getElementById('typing-indicator');
+      if (indicator) {
+        indicator.remove();
+      }
+    }
+
+    function getBotResponse(message) {
+      const lowerMsg = message.toLowerCase();
+      
+      // Skills related
+      if (lowerMsg.includes('skill') || lowerMsg.includes('technologies') || lowerMsg.includes('tech stack')) {
+        return "Vishal is skilled in: HTML5, CSS3, JavaScript, React.js, Node.js, Express.js, PostgreSQL, MongoDB, REST APIs, and more! Check the Skills section above. 💻";
+      }
+      
+      // Projects related
+      else if (lowerMsg.includes('project')) {
+        return "Vishal has worked on several projects including:\n• Live Weather App 🌤️\n• Dice Rolling Game 🎲\n• Salon At Home 💇\n• Virtual Drum Kit 🥁\n• HRMS System\n• Blog Application\nCheck them out in the Projects section! 🚀";
+      }
+      
+      // Contact related
+      else if (lowerMsg.includes('contact') || lowerMsg.includes('email') || lowerMsg.includes('reach')) {
+        return "You can contact Vishal through:\n• Contact form on Home page 📝\n• LinkedIn: linkedin.com/in/vishal-sharma-524715226/\n• GitHub: github.com/sharam96\n• Twitter: @VishalS14120417";
+      }
+      
+      // Experience related
+      else if (lowerMsg.includes('experience') || lowerMsg.includes('work') || lowerMsg.includes('intern')) {
+        return "Vishal has:\n• Web Development Internship experience\n• Built HRMS systems\n• 14+ years of project management experience\n• Strong Agile methodology expertise\n• Excellent leadership & communication skills 💼";
+      }
+      
+      // Education related
+      else if (lowerMsg.includes('education') || lowerMsg.includes('study') || lowerMsg.includes('college')) {
+        return "Vishal is currently pursuing BCA at IITM Janakpuri, Delhi, with focus on web development and software engineering. 🎓";
+      }
+      
+      // Resume related
+      else if (lowerMsg.includes('resume') || lowerMsg.includes('cv')) {
+        return "You can download Vishal's resume by clicking the 'Resume' link in the navigation menu! 📄";
+      }
+      
+      // Greetings
+      else if (lowerMsg.includes('hi') || lowerMsg.includes('hello') || lowerMsg.includes('hey')) {
+        return "Hello! 👋 How can I assist you today? You can ask about Vishal's skills, projects, experience, or contact information.";
+      }
+      
+      // About
+      else if (lowerMsg.includes('about') || lowerMsg.includes('who is')) {
+        return "Vishal Sharma is a passionate BCA student at IITM Janakpuri, specializing in full-stack web development with the MERN stack. He loves building responsive, user-friendly applications! 🚀";
+      }
+      
+      // Default response
+      else {
+        return "I'm here to help! You can ask me about:\n• Skills & Technologies 💻\n• Projects 🚀\n• Experience 💼\n• Education 🎓\n• Contact Information 📞\n\nWhat would you like to know?";
+      }
     }
   </script>
 </body>
