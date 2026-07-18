@@ -53,8 +53,9 @@
       align-items: center;
       min-height: 82px;
       background: rgba(18, 18, 62, 0.86);
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
       z-index: 999;
       padding: 0 5%;
       width: 100%;
@@ -124,12 +125,12 @@
     }
 
     .hero {
-      min-height: calc(100vh - 82px);
+      min-height: 100vh;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 56px;
-      padding: 80px 7%;
+      padding: 162px 7% 80px;
       max-width: 1320px;
       margin: auto;
     }
@@ -585,7 +586,7 @@
 
       .hero {
         min-height: auto;
-        padding: 65px 6% 45px;
+        padding: 135px 6% 45px;
       }
 
       .section {
@@ -932,17 +933,11 @@
     });
 
     new Typed("#element", {
-      strings: [
-        "Full Stack Web Developer",
-        "React.js Developer",
-        "Node.js Developer",
-        "Automation Developer",
-        "API Integration Developer"
-      ],
+      strings: ["Full Stack Web Developer"],
       typeSpeed: 48,
-      backSpeed: 28,
-      backDelay: 1100,
-      loop: true
+      backSpeed: 0,
+      loop: false,
+      showCursor: true
     });
 
     particlesJS("particles-js", {
