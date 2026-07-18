@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>About Vishal Sharma | Full Stack Web Developer</title>
-  <meta name="description" content="Learn about Vishal Sharma, a BCA graduate and Full Stack Web Developer with internship experience, live client projects, REST APIs, PostgreSQL and WhatsApp automation." />
-  <meta name="keywords" content="Vishal Sharma, About, Full Stack Developer, BCA Graduate, React, Node.js, PostgreSQL, WhatsApp Automation" />
+  <title>Vishal Sharma | Full Stack Web Developer</title>
+  <meta name="description" content="Portfolio of Vishal Sharma, a Full Stack Web Developer and BCA graduate experienced in responsive web applications, REST APIs, PostgreSQL, client websites and WhatsApp automation." />
+  <meta name="keywords" content="Vishal Sharma, Full Stack Web Developer, React Developer, Node.js Developer, WhatsApp Automation, PostgreSQL, Portfolio" />
   <meta name="author" content="Vishal Sharma" />
   <meta name="robots" content="index, follow" />
 
-  <meta property="og:title" content="About Vishal Sharma | Full Stack Web Developer" />
-  <meta property="og:description" content="BCA graduate with hands-on experience in frontend, backend, APIs, databases, client websites and automation." />
+  <meta property="og:title" content="Vishal Sharma | Full Stack Web Developer" />
+  <meta property="og:description" content="Full Stack Web Developer experienced in web applications, REST APIs, client projects and business automation." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vishalsharmatech.info" />
 
   <link rel="icon" type="image/x-icon" href="./10844984.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -34,6 +35,7 @@
       color: white;
       font-family: "Poppins", sans-serif;
       overflow-x: hidden;
+      width: 100%;
     }
 
     #particles-js {
@@ -54,10 +56,9 @@
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      width: 100%;
       z-index: 999;
       padding: 0 5%;
+      width: 100%;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(156, 151, 241, 0.15);
     }
@@ -69,13 +70,20 @@
     }
 
     .hamburger {
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
       border: 0;
       background: transparent;
       padding: 6px;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      opacity: 1;
+      visibility: visible;
       z-index: 1001;
     }
 
@@ -85,6 +93,18 @@
       background: white;
       border-radius: 4px;
       transition: 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .nav-links {
@@ -123,193 +143,64 @@
       width: 100%;
     }
 
-    .container {
-      max-width: 1100px;
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 56px;
+      padding: 162px 7% 80px;
+      max-width: 1320px;
       margin: auto;
-      padding: 165px 5% 30px;
     }
 
-    .page-heading {
-      text-align: center;
-      margin-bottom: 45px;
+    .hero-content {
+      flex: 1;
+      max-width: 720px;
     }
 
-    .page-heading span {
-      color: #aaa6ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-
-    .page-heading h1 {
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      margin-top: 10px;
-    }
-
-    .page-heading p {
-      max-width: 760px;
-      margin: 16px auto 0;
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.8;
-    }
-
-    .summary-card {
-      background: linear-gradient(135deg, rgba(156, 151, 241, 0.14), rgba(255, 255, 255, 0.045));
-      border: 1px solid rgba(156, 151, 241, 0.24);
-      border-left: 4px solid #9c97f1;
-      border-radius: 18px;
-      padding: 31px;
-      margin-bottom: 34px;
-    }
-
-    .summary-card p {
-      line-height: 1.85;
-      color: rgba(255, 255, 255, 0.86);
-      font-size: 1.04rem;
-    }
-
-    .section-block {
-      margin-top: 60px;
-    }
-
-    .section-title {
-      color: #b8b4ff;
-      font-size: clamp(1.65rem, 4vw, 2.2rem);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(156, 151, 241, 0.25);
-    }
-
-    .info-card {
-      background: rgba(255, 255, 255, 0.052);
-      border: 1px solid rgba(156, 151, 241, 0.15);
-      border-radius: 17px;
-      padding: 28px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(156, 151, 241, 0.35);
+      background: rgba(156, 151, 241, 0.09);
+      border-radius: 999px;
+      color: #c9c6ff;
+      font-size: 0.88rem;
       margin-bottom: 22px;
     }
 
-    .info-card h3 {
-      font-size: 1.28rem;
-      margin-bottom: 7px;
+    .hero h1 {
+      font-size: clamp(2.45rem, 6vw, 5rem);
+      line-height: 1.08;
+      margin-bottom: 18px;
     }
 
-    .meta {
-      color: #b8b4ff;
-      font-weight: 500;
-      margin-bottom: 17px;
+    .highlight,
+    #element {
+      color: #aa6be4;
     }
 
-    .info-card p,
-    .info-card li {
-      color: rgba(255, 255, 255, 0.76);
-      line-height: 1.8;
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 700px;
     }
 
-    .info-card ul {
-      padding-left: 22px;
+    .typed-line {
+      margin-top: 14px;
+      font-size: clamp(1.12rem, 3vw, 1.5rem);
+      font-weight: 600;
     }
 
-    .info-card li {
-      margin-bottom: 9px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .skill-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(156, 151, 241, 0.15);
-      border-radius: 16px;
-      padding: 25px;
-    }
-
-    .skill-box h3 {
-      color: #b8b4ff;
-      margin-bottom: 17px;
-    }
-
-    .skills-tags {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-tag {
-      padding: 9px 14px;
-      background: rgba(255, 255, 255, 0.075);
-      border-radius: 999px;
-      font-size: 0.89rem;
-      transition: 0.3s ease;
-    }
-
-    .skill-tag:hover {
-      background: rgba(156, 151, 241, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .projects-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .project-item {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(156, 151, 241, 0.14);
-      border-radius: 15px;
-      padding: 23px;
-    }
-
-    .project-item h3 {
-      margin-bottom: 10px;
-      font-size: 1.15rem;
-    }
-
-    .project-item p {
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.7;
-      font-size: 0.94rem;
-    }
-
-    .strengths {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .strength {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(156, 151, 241, 0.14);
-      border-radius: 14px;
-      padding: 21px 12px;
-    }
-
-    .cert-list {
-      display: grid;
       gap: 14px;
-    }
-
-    .cert-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 17px 19px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 13px;
-      border: 1px solid rgba(156, 151, 241, 0.13);
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 52px;
+      margin-top: 30px;
     }
 
     .btn {
@@ -322,6 +213,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s ease;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -338,6 +230,7 @@
 
     .btn-secondary {
       color: white;
+      background: transparent;
       border: 2px solid rgba(156, 151, 241, 0.55);
     }
 
@@ -346,8 +239,256 @@
       transform: translateY(-3px);
     }
 
+    .hero-image {
+      flex: 0 1 430px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: min(100%, 410px);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 24px 45px rgba(156, 151, 241, 0.18));
+    }
+
+    .stats {
+      max-width: 1120px;
+      margin: -25px auto 0;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(156, 151, 241, 0.16);
+      border-radius: 16px;
+      padding: 22px 16px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(156, 151, 241, 0.45);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-card strong {
+      display: block;
+      color: #b8b4ff;
+      font-size: 1.18rem;
+      margin-bottom: 6px;
+    }
+
+    .section {
+      max-width: 1160px;
+      margin: 110px auto;
+      padding: 0 5%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .section-header span {
+      color: #aaa6ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-top: 9px;
+    }
+
+    .section-header p {
+      color: rgba(255, 255, 255, 0.68);
+      max-width: 710px;
+      margin: 14px auto 0;
+      line-height: 1.7;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .skill-group {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(156, 151, 241, 0.15);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .skill-group h3 {
+      color: #b8b4ff;
+      margin-bottom: 18px;
+      font-size: 1.25rem;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .skill-tag {
+      padding: 9px 14px;
+      background: rgba(255, 255, 255, 0.075);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      transition: 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background: rgba(156, 151, 241, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background: rgba(255, 255, 255, 0.052);
+      border: 1px solid rgba(156, 151, 241, 0.16);
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.35s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(156, 151, 241, 0.5);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+    }
+
+    .project-type {
+      width: fit-content;
+      color: #c6c3ff;
+      background: rgba(156, 151, 241, 0.13);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.78rem;
+      margin-bottom: 17px;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.72;
+      margin-bottom: 18px;
+    }
+
+    .tech {
+      color: #b8b4ff;
+      font-size: 0.88rem;
+      margin-top: auto;
+      margin-bottom: 19px;
+      line-height: 1.6;
+    }
+
+    .project-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .project-link:hover {
+      color: #b8b4ff;
+    }
+
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .strength-card {
+      text-align: center;
+      padding: 25px 18px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(156, 151, 241, 0.14);
+      font-weight: 500;
+    }
+
+    .contact-card {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.052);
+      border: 1px solid rgba(156, 151, 241, 0.18);
+      border-radius: 20px;
+      padding: 34px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      color: white;
+      font-family: inherit;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(156, 151, 241, 0.25);
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #9c97f1;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 4px rgba(156, 151, 241, 0.09);
+    }
+
+    .contact-form textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: 100%;
+      border: 0;
+    }
+
+    .thankyou-message {
+      text-align: center;
+      padding: 28px 12px;
+    }
+
+    .thankyou-message h3 {
+      color: #b8b4ff;
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
     footer {
-      margin-top: 80px;
+      margin-top: 90px;
       padding: 36px 20px;
       text-align: center;
       background: rgba(18, 18, 62, 0.48);
@@ -375,6 +516,7 @@
     .social-links img {
       width: 38px;
       height: 38px;
+      object-fit: contain;
       filter: brightness(0) invert(1);
       transition: 0.3s ease;
     }
@@ -384,13 +526,46 @@
       filter: brightness(0) invert(1) drop-shadow(0 0 8px #9c97f1);
     }
 
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none;
+      }
+    }
+
     @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 70px;
+      }
+
+      .hero-subtitle {
+        margin-inline: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-image {
+        flex-basis: auto;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 10px;
+      }
+
       .skills-grid,
-      .projects-list {
+      .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .strengths {
+      .strengths-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -398,10 +573,6 @@
     @media (max-width: 768px) {
       nav {
         min-height: 70px;
-      }
-
-      .hamburger {
-        display: flex;
       }
 
       .nav-links {
@@ -434,28 +605,38 @@
         padding: 12px;
       }
 
-      .container {
-        padding-top: 145px;
+      .hero {
+        min-height: auto;
+        padding: 135px 6% 45px;
+      }
+
+      .section {
+        margin: 85px auto;
       }
     }
 
     @media (max-width: 520px) {
-      .strengths {
+      .stats,
+      .strengths-grid {
         grid-template-columns: 1fr;
       }
 
-      .summary-card,
-      .info-card,
-      .skill-box {
-        padding: 22px 18px;
-      }
-
-      .actions {
+      .hero-actions {
         flex-direction: column;
       }
 
       .btn {
         width: 100%;
+      }
+
+      .skill-group,
+      .project-card,
+      .contact-card {
+        padding: 23px 18px;
+      }
+
+      .hero-image img {
+        max-width: 310px;
       }
     }
   </style>
@@ -475,71 +656,76 @@
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html" class="active">About Me</a></li>
+        <li><a href="./index.html" class="active">Home</a></li>
+        <li><a href="./about.html">About Me</a></li>
         <li><a href="./Vishal Sharma - Full Stack Web Developer.pdf" target="_blank" rel="noopener">Resume</a></li>
-        <li><a href="./index.html#projects">Projects</a></li>
-        <li><a href="./index.html#contact">Contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
-    <div class="page-heading" data-aos="fade-up">
-      <span>Know More About Me</span>
-      <h1>About Vishal Sharma</h1>
-      <p>
-        Full Stack Web Developer focused on creating reliable web applications,
-        production client websites and automation solutions for real business needs.
-      </p>
-    </div>
+  <main>
+    <section class="hero">
+      <div class="hero-content" data-aos="fade-right">
+        <div class="eyebrow">● Available for full-time opportunities</div>
 
-    <section class="summary-card" data-aos="fade-up">
-      <p>
-        👋 Hi, I'm <strong>Vishal Sharma</strong>, a <strong>Full Stack Web Developer and BCA graduate</strong>
-        with hands-on experience developing responsive web applications, RESTful APIs,
-        PostgreSQL-backed systems, business automation and production client websites.
-        I work with JavaScript, React.js, Node.js, Express.js, SQL, Git and cloud deployment,
-        and I enjoy building solutions that are practical, maintainable and user-friendly.
-      </p>
-    </section>
+        <h1>
+          Hey, I'm <span class="highlight">Vishal Sharma</span>
+        </h1>
 
-    <section class="section-block" id="experience">
-      <h2 class="section-title" data-aos="fade-right">💼 Experience</h2>
+        <p class="hero-subtitle">
+          Full Stack Web Developer and BCA graduate experienced in responsive web applications,
+          REST APIs, PostgreSQL-backed systems, production client websites and business automation.
+        </p>
 
-      <div class="info-card" data-aos="fade-up">
-        <h3>Frontend & Backend Development Intern</h3>
-        <div class="meta">Uptoskills | Remote | June 2025 – September 2025</div>
+        <div class="typed-line">
+          I work as a <span id="element"></span>
+        </div>
 
-        <ul>
-          <li>Collaborated with a development team to build an HRMS for employee and workflow management.</li>
-          <li>Developed responsive interfaces using HTML5, CSS3, JavaScript and DOM manipulation.</li>
-          <li>Supported RESTful API development with Node.js and Express.js.</li>
-          <li>Integrated PostgreSQL data flows and assisted with frontend-backend integration.</li>
-          <li>Tested APIs in Postman and debugged integration issues.</li>
-          <li>Used Git and GitHub for version control and team collaboration.</li>
-        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./Vishal Sharma - Full Stack Web Developer.pdf" download>
+            📄 Download Resume
+          </a>
+          <a class="btn btn-secondary" href="#contact">Hire Me</a>
+        </div>
+      </div>
+
+      <div class="hero-image" data-aos="fade-left">
+        <img src="./3426526-removebg-preview.png" alt="Vishal Sharma Full Stack Web Developer" />
       </div>
     </section>
 
-    <section class="section-block">
-      <h2 class="section-title" data-aos="fade-right">🎓 Education</h2>
+    <section class="stats" data-aos="fade-up">
+      <div class="stat-card">
+        <strong>2+ Live</strong>
+        Client Projects
+      </div>
+      <div class="stat-card">
+        <strong>Internship</strong>
+        Development Experience
+      </div>
+      <div class="stat-card">
+        <strong>WhatsApp</strong>
+        Business Automation
+      </div>
+      <div class="stat-card">
+        <strong>Full Stack</strong>
+        Web Development
+      </div>
+    </section>
 
-      <div class="info-card" data-aos="fade-up">
-        <h3>Bachelor of Computer Applications (BCA)</h3>
-        <div class="meta">2023 – 2026</div>
+    <section class="section" id="skills">
+      <div class="section-header" data-aos="fade-up">
+        <span>My Expertise</span>
+        <h2>Technical Skills</h2>
         <p>
-          Institute of Innovation in Technology & Management (IITM), Janakpuri, Delhi<br />
-          Affiliated with Maharshi Dayanand University, Rohtak
+          Technologies and tools I use to build responsive, maintainable and production-ready applications.
         </p>
       </div>
-    </section>
-
-    <section class="section-block">
-      <h2 class="section-title" data-aos="fade-right">💻 Technical Skills</h2>
 
       <div class="skills-grid">
-        <div class="skill-box" data-aos="fade-up">
+        <div class="skill-group" data-aos="fade-right">
           <h3>Frontend</h3>
           <div class="skills-tags">
             <span class="skill-tag">HTML5</span>
@@ -551,36 +737,32 @@
           </div>
         </div>
 
-        <div class="skill-box" data-aos="fade-up">
-          <h3>Backend</h3>
+        <div class="skill-group" data-aos="fade-left">
+          <h3>Backend & Databases</h3>
           <div class="skills-tags">
             <span class="skill-tag">Node.js</span>
             <span class="skill-tag">Express.js</span>
             <span class="skill-tag">RESTful APIs</span>
             <span class="skill-tag">Webhooks</span>
             <span class="skill-tag">CRUD</span>
-          </div>
-        </div>
-
-        <div class="skill-box" data-aos="fade-up">
-          <h3>Databases</h3>
-          <div class="skills-tags">
             <span class="skill-tag">SQL</span>
             <span class="skill-tag">PostgreSQL</span>
             <span class="skill-tag">Supabase</span>
           </div>
         </div>
 
-        <div class="skill-box" data-aos="fade-up">
+        <div class="skill-group" data-aos="fade-right">
           <h3>Automation & APIs</h3>
           <div class="skills-tags">
             <span class="skill-tag">Meta WhatsApp Cloud API</span>
             <span class="skill-tag">WhatsApp Automation</span>
             <span class="skill-tag">API Integration</span>
+            <span class="skill-tag">OpenWeather API</span>
+            <span class="skill-tag">Open Library API</span>
           </div>
         </div>
 
-        <div class="skill-box" data-aos="fade-up">
+        <div class="skill-group" data-aos="fade-left">
           <h3>Tools & Deployment</h3>
           <div class="skills-tags">
             <span class="skill-tag">Git</span>
@@ -591,82 +773,154 @@
             <span class="skill-tag">Vercel</span>
           </div>
         </div>
-
-        <div class="skill-box" data-aos="fade-up">
-          <h3>Core Strengths</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">Problem Solving</span>
-            <span class="skill-tag">Team Collaboration</span>
-            <span class="skill-tag">Debugging</span>
-            <span class="skill-tag">Client Communication</span>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="section-block">
-      <h2 class="section-title" data-aos="fade-right">🚀 Selected Projects</h2>
+    <section class="section" id="projects">
+      <div class="section-header" data-aos="fade-up">
+        <span>Selected Work</span>
+        <h2>Projects</h2>
+        <p>
+          Client websites, automation workflows and full-stack applications built for real-world requirements.
+        </p>
+      </div>
 
-      <div class="projects-list">
-        <div class="project-item" data-aos="fade-up">
-          <h3>EcomPlanet — Live Client Project</h3>
-          <p>Responsive e-commerce website with structured product presentation, mobile-first layouts and production deployment.</p>
-        </div>
+      <div class="projects-grid">
+        <article class="project-card" data-aos="fade-up">
+          <div class="project-type">Live Client Project</div>
+          <h3>🛒 EcomPlanet</h3>
+          <p>
+            Developed and deployed a responsive e-commerce website with structured product presentation,
+            mobile-first layouts and production deployment.
+          </p>
+          <div class="tech">HTML5 • CSS3 • JavaScript • Responsive Web Design</div>
+          <a class="project-link" href="https://ecomplanet.in" target="_blank" rel="noopener noreferrer">View Live Project →</a>
+        </article>
 
-        <div class="project-item" data-aos="fade-up">
-          <h3>UGC on Scale — Live Client Project</h3>
-          <p>Conversion-focused website for AI UGC video services with pricing packages, video sections and WhatsApp lead generation.</p>
-        </div>
+        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-type">Live Client Project</div>
+          <h3>🎬 UGC on Scale</h3>
+          <p>
+            Built a conversion-focused website for AI UGC video services with pricing packages,
+            video-led sections, calls to action and WhatsApp lead generation.
+          </p>
+          <div class="tech">HTML5 • CSS3 • JavaScript • WhatsApp Integration</div>
+          <a class="project-link" href="https://ugconscale.in" target="_blank" rel="noopener noreferrer">View Live Project →</a>
+        </article>
 
-        <div class="project-item" data-aos="fade-up">
-          <h3>WhatsApp Business Automation</h3>
-          <p>Automation workflow for instant replies, lead qualification and enquiry collection using the Meta WhatsApp Cloud API.</p>
-        </div>
+        <article class="project-card" data-aos="fade-up">
+          <div class="project-type">Automation Project</div>
+          <h3>💬 WhatsApp Business Automation</h3>
+          <p>
+            Created a cloud-deployed automation workflow for instant replies, enquiry collection and lead
+            qualification using the Meta WhatsApp Cloud API and webhooks.
+          </p>
+          <div class="tech">Node.js • Express.js • REST APIs • Webhooks • Meta Cloud API • Render</div>
+          <a class="project-link" href="#contact">Request Demo →</a>
+        </article>
 
-        <div class="project-item" data-aos="fade-up">
-          <h3>HRMS System</h3>
-          <p>Worked on responsive UI development, REST API integration and PostgreSQL-backed employee data workflows.</p>
-        </div>
+        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-type">Team Project</div>
+          <h3>👥 HRMS System</h3>
+          <p>
+            Contributed to responsive UI development, REST API integration and PostgreSQL-backed employee
+            data workflows during the Uptoskills internship.
+          </p>
+          <div class="tech">HTML5 • CSS3 • JavaScript • Node.js • Express.js • PostgreSQL</div>
+          <a class="project-link" href="./about.html#experience">View Experience →</a>
+        </article>
 
-        <div class="project-item" data-aos="fade-up">
-          <h3>Book Library Management System</h3>
-          <p>Full-stack application with ISBN-based book retrieval, ratings, reviews and persistent PostgreSQL storage.</p>
-        </div>
+        <article class="project-card" data-aos="fade-up">
+          <div class="project-type">Full Stack Project</div>
+          <h3>📚 Book Library Management System</h3>
+          <p>
+            Built an application that retrieves book data by ISBN, supports ratings and reviews,
+            and stores records persistently in PostgreSQL.
+          </p>
+          <div class="tech">Node.js • Express.js • PostgreSQL • Open Library API</div>
+          <a class="project-link" href="https://book-library-management-1-lfhp.onrender.com/" target="_blank" rel="noopener noreferrer">View Project →</a>
+        </article>
 
-        <div class="project-item" data-aos="fade-up">
-          <h3>Blog Web Application</h3>
-          <p>Database-backed CRUD blog application developed using Node.js, Express.js and PostgreSQL.</p>
-        </div>
+        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-type">Full Stack Project</div>
+          <h3>📝 Blog Web Application</h3>
+          <p>
+            Developed a database-backed blog with create, read, update and delete operations
+            using a Node.js and PostgreSQL backend.
+          </p>
+          <div class="tech">Node.js • Express.js • PostgreSQL • CRUD</div>
+          <a class="project-link" href="https://blog-website-it47.onrender.com/" target="_blank" rel="noopener noreferrer">View Project →</a>
+        </article>
+
+        <article class="project-card" data-aos="fade-up">
+          <div class="project-type">Frontend Project</div>
+          <h3>🌤️ Live Weather Web App</h3>
+          <p>
+            Integrated OpenWeather API to display real-time weather data for user-selected cities
+            through a responsive interface.
+          </p>
+          <div class="tech">HTML5 • CSS3 • JavaScript • OpenWeather API</div>
+          <a class="project-link" href="https://sharam96.github.io/Live-Weather/" target="_blank" rel="noopener noreferrer">View Project →</a>
+        </article>
+
+        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-type">Personal Project</div>
+          <h3>🌐 Personal Portfolio</h3>
+          <p>
+            Designed and deployed a responsive portfolio showcasing technical skills,
+            development experience and selected projects.
+          </p>
+          <div class="tech">HTML5 • CSS3 • JavaScript • Responsive Design</div>
+          <a class="project-link" href="https://vishalsharmatech.info" target="_blank" rel="noopener noreferrer">Visit Website →</a>
+        </article>
       </div>
     </section>
 
-    <section class="section-block">
-      <h2 class="section-title" data-aos="fade-right">⭐ Core Strengths</h2>
+    <section class="section">
+      <div class="section-header" data-aos="fade-up">
+        <span>What I Bring</span>
+        <h2>Core Strengths</h2>
+      </div>
 
-      <div class="strengths">
-        <div class="strength" data-aos="zoom-in">Problem Solving</div>
-        <div class="strength" data-aos="zoom-in">Team Collaboration</div>
-        <div class="strength" data-aos="zoom-in">Debugging</div>
-        <div class="strength" data-aos="zoom-in">Client Communication</div>
+      <div class="strengths-grid">
+        <div class="strength-card" data-aos="zoom-in">Problem Solving</div>
+        <div class="strength-card" data-aos="zoom-in">Team Collaboration</div>
+        <div class="strength-card" data-aos="zoom-in">Debugging</div>
+        <div class="strength-card" data-aos="zoom-in">Client Communication</div>
+        <div class="strength-card" data-aos="zoom-in">API Integration</div>
+        <div class="strength-card" data-aos="zoom-in">Business Automation</div>
       </div>
     </section>
 
-    <section class="section-block">
-      <h2 class="section-title" data-aos="fade-right">🏆 Certifications</h2>
+    <section class="section" id="contact">
+      <div class="section-header" data-aos="fade-up">
+        <span>Let's Connect</span>
+        <h2>Get In Touch</h2>
+        <p>
+          I am open to full-time developer roles, internships, freelance projects and business automation work.
+        </p>
+      </div>
 
-      <div class="cert-list">
-        <div class="cert-item" data-aos="fade-up">✓ iCAT Test Certification — Qualified</div>
-        <div class="cert-item" data-aos="fade-up">✓ Uptoskills Internship Completion Certificate</div>
-        <div class="cert-item" data-aos="fade-up">✓ Uptoskills Internship Experience Letter</div>
+      <div class="contact-card" data-aos="fade-up">
+        <div id="form-container">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbkrbdq" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+            </div>
+
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required />
+            </div>
+
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit" id="submitBtn">📨 Send Message</button>
+          </form>
+        </div>
       </div>
     </section>
-
-    <div class="actions" data-aos="fade-up">
-      <a class="btn btn-primary" href="./Vishal Sharma - Full Stack Web Developer.pdf" download>
-        📄 Download Resume
-      </a>
-      <a class="btn btn-secondary" href="./index.html#contact">Contact Me</a>
-    </div>
   </main>
 
   <footer>
@@ -688,6 +942,7 @@
     <p>© 2026 Vishal Sharma. All rights reserved.</p>
   </footer>
 
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
@@ -696,6 +951,14 @@
       duration: 800,
       once: true,
       offset: 80
+    });
+
+    new Typed("#element", {
+      strings: ["Full Stack Web Developer"],
+      typeSpeed: 48,
+      backSpeed: 0,
+      loop: false,
+      showCursor: true
     });
 
     particlesJS("particles-js", {
@@ -742,27 +1005,17 @@
 
     function closeMenu() {
       navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
       hamburger.setAttribute("aria-expanded", "false");
-
-      const bars = hamburger.querySelectorAll("span");
-      bars[0].style.transform = "none";
-      bars[1].style.opacity = "1";
-      bars[2].style.transform = "none";
+      document.body.classList.remove("menu-open");
     }
 
-    hamburger.addEventListener("click", function () {
+    hamburger.addEventListener("click", function (event) {
+      event.stopPropagation();
       const isOpen = navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active", isOpen);
       hamburger.setAttribute("aria-expanded", String(isOpen));
-
-      const bars = hamburger.querySelectorAll("span");
-
-      if (isOpen) {
-        bars[0].style.transform = "rotate(45deg) translate(6px, 6px)";
-        bars[1].style.opacity = "0";
-        bars[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
-      } else {
-        closeMenu();
-      }
+      document.body.classList.toggle("menu-open", isOpen);
     });
 
     document.querySelectorAll(".nav-links a").forEach(function (link) {
@@ -772,6 +1025,48 @@
     document.addEventListener("click", function (event) {
       if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
         closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formContainer = document.getElementById("form-container");
+
+    contactForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Message could not be sent.");
+        }
+
+        formContainer.innerHTML = `
+          <div class="thankyou-message">
+            <h3>🎉 Thank You!</h3>
+            <p>Your message has been sent successfully. I will get back to you soon.</p>
+          </div>
+        `;
+      } catch (error) {
+        alert("Something went wrong. Please try again.");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "📨 Send Message";
       }
     });
   </script>
