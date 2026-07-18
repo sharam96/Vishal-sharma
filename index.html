@@ -34,6 +34,16 @@
       background: rgb(0, 0, 33);
       color: white;
       font-family: "Poppins", sans-serif;
+      width: 100%;
+    }
+
+    /* 👇 NEW: overflow-x hidden ab isolated wrapper par hai, html/body par nahi.
+       Ye hi asli fix hai — html/body par overflow-x:hidden lagane se mobile
+       Safari/Chrome position:fixed elements ko viewport se detach kar deta
+       hai jab tak scroll na ho. Ye wrapper (transform-free) us bug ko avoid
+       karta hai kyunki fixed elements sirf transform/filter/will-change wale
+       ancestors se clip hote hain, sirf overflow se nahi. */
+    .page-wrap {
       overflow-x: hidden;
       width: 100%;
     }
@@ -60,6 +70,7 @@
       padding: 0 5%;
       width: 100%;
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(156, 151, 241, 0.15);
     }
 
@@ -249,6 +260,7 @@
       padding: 22px 16px;
       text-align: center;
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       transition: 0.3s ease;
     }
 
@@ -624,302 +636,304 @@
 <body>
   <div id="particles-js"></div>
 
-  <header>
-    <nav>
-      <div class="brand">Vishal Sharma</div>
+  <div class="page-wrap">
+    <header>
+      <nav>
+        <div class="brand">Vishal Sharma</div>
 
-      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="./index.html" class="active">Home</a></li>
-        <li><a href="./about.html">About Me</a></li>
-        <li><a href="./Vishal Sharma - Full Stack Web Developer.pdf" target="_blank" rel="noopener">Resume</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html" class="active">Home</a></li>
+          <li><a href="./about.html">About Me</a></li>
+          <li><a href="./Vishal Sharma - Full Stack Web Developer.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content" data-aos="fade-right">
-        <div class="eyebrow">● Available for full-time opportunities</div>
+    <main>
+      <section class="hero">
+        <div class="hero-content" data-aos="fade-right">
+          <div class="eyebrow">● Available for full-time opportunities</div>
 
-        <h1>
-          Hey, I'm <span class="highlight">Vishal Sharma</span>
-        </h1>
+          <h1>
+            Hey, I'm <span class="highlight">Vishal Sharma</span>
+          </h1>
 
-        <p class="hero-subtitle">
-          Full Stack Web Developer and BCA graduate experienced in responsive web applications,
-          REST APIs, PostgreSQL-backed systems, production client websites and business automation.
-        </p>
+          <p class="hero-subtitle">
+            Full Stack Web Developer and BCA graduate experienced in responsive web applications,
+            REST APIs, PostgreSQL-backed systems, production client websites and business automation.
+          </p>
 
-        <div class="typed-line">
-          I work as a <span id="element"></span>
-        </div>
+          <div class="typed-line">
+            I work as a <span id="element"></span>
+          </div>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="./Vishal Sharma - Full Stack Web Developer.pdf" download>
-            📄 Download Resume
-          </a>
-          <a class="btn btn-secondary" href="#contact">Hire Me</a>
-        </div>
-      </div>
-
-      <div class="hero-image" data-aos="fade-left">
-        <img src="./3426526-removebg-preview.png" alt="Vishal Sharma Full Stack Web Developer" />
-      </div>
-    </section>
-
-    <section class="stats" data-aos="fade-up">
-      <div class="stat-card">
-        <strong>2+ Live</strong>
-        Client Projects
-      </div>
-      <div class="stat-card">
-        <strong>Internship</strong>
-        Development Experience
-      </div>
-      <div class="stat-card">
-        <strong>WhatsApp</strong>
-        Business Automation
-      </div>
-      <div class="stat-card">
-        <strong>Full Stack</strong>
-        Web Development
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section-header" data-aos="fade-up">
-        <span>My Expertise</span>
-        <h2>Technical Skills</h2>
-        <p>
-          Technologies and tools I use to build responsive, maintainable and production-ready applications.
-        </p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-group" data-aos="fade-right">
-          <h3>Frontend</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaScript (ES6+)</span>
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">DOM</span>
-            <span class="skill-tag">Responsive Design</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./Vishal Sharma - Full Stack Web Developer.pdf" download>
+              📄 Download Resume
+            </a>
+            <a class="btn btn-secondary" href="#contact">Hire Me</a>
           </div>
         </div>
 
-        <div class="skill-group" data-aos="fade-left">
-          <h3>Backend & Databases</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express.js</span>
-            <span class="skill-tag">RESTful APIs</span>
-            <span class="skill-tag">Webhooks</span>
-            <span class="skill-tag">CRUD</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Supabase</span>
-          </div>
+        <div class="hero-image" data-aos="fade-left">
+          <img src="./3426526-removebg-preview.png" alt="Vishal Sharma Full Stack Web Developer" />
+        </div>
+      </section>
+
+      <section class="stats" data-aos="fade-up">
+        <div class="stat-card">
+          <strong>2+ Live</strong>
+          Client Projects
+        </div>
+        <div class="stat-card">
+          <strong>Internship</strong>
+          Development Experience
+        </div>
+        <div class="stat-card">
+          <strong>WhatsApp</strong>
+          Business Automation
+        </div>
+        <div class="stat-card">
+          <strong>Full Stack</strong>
+          Web Development
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="section-header" data-aos="fade-up">
+          <span>My Expertise</span>
+          <h2>Technical Skills</h2>
+          <p>
+            Technologies and tools I use to build responsive, maintainable and production-ready applications.
+          </p>
         </div>
 
-        <div class="skill-group" data-aos="fade-right">
-          <h3>Automation & APIs</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">Meta WhatsApp Cloud API</span>
-            <span class="skill-tag">WhatsApp Automation</span>
-            <span class="skill-tag">API Integration</span>
-            <span class="skill-tag">OpenWeather API</span>
-            <span class="skill-tag">Open Library API</span>
-          </div>
-        </div>
-
-        <div class="skill-group" data-aos="fade-left">
-          <h3>Tools & Deployment</h3>
-          <div class="skills-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Postman</span>
-            <span class="skill-tag">Render</span>
-            <span class="skill-tag">Vercel</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-header" data-aos="fade-up">
-        <span>Selected Work</span>
-        <h2>Projects</h2>
-        <p>
-          Client websites, automation workflows and full-stack applications built for real-world requirements.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card" data-aos="fade-up">
-          <div class="project-type">Live Client Project</div>
-          <h3>🛒 EcomPlanet</h3>
-          <p>
-            Developed and deployed a responsive e-commerce website with structured product presentation,
-            mobile-first layouts and production deployment.
-          </p>
-          <div class="tech">HTML5 • CSS3 • JavaScript • Responsive Web Design</div>
-          <a class="project-link" href="https://ecomplanet.in" target="_blank" rel="noopener noreferrer">View Live Project →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-type">Live Client Project</div>
-          <h3>🎬 UGC on Scale</h3>
-          <p>
-            Built a conversion-focused website for AI UGC video services with pricing packages,
-            video-led sections, calls to action and WhatsApp lead generation.
-          </p>
-          <div class="tech">HTML5 • CSS3 • JavaScript • WhatsApp Integration</div>
-          <a class="project-link" href="https://ugconscale.in" target="_blank" rel="noopener noreferrer">View Live Project →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up">
-          <div class="project-type">Automation Project</div>
-          <h3>💬 WhatsApp Business Automation</h3>
-          <p>
-            Created a cloud-deployed automation workflow for instant replies, enquiry collection and lead
-            qualification using the Meta WhatsApp Cloud API and webhooks.
-          </p>
-          <div class="tech">Node.js • Express.js • REST APIs • Webhooks • Meta Cloud API • Render</div>
-          <a class="project-link" href="#contact">Request Demo →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-type">Team Project</div>
-          <h3>👥 HRMS System</h3>
-          <p>
-            Contributed to responsive UI development, REST API integration and PostgreSQL-backed employee
-            data workflows during the Uptoskills internship.
-          </p>
-          <div class="tech">HTML5 • CSS3 • JavaScript • Node.js • Express.js • PostgreSQL</div>
-          <a class="project-link" href="./about.html#experience">View Experience →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up">
-          <div class="project-type">Full Stack Project</div>
-          <h3>📚 Book Library Management System</h3>
-          <p>
-            Built an application that retrieves book data by ISBN, supports ratings and reviews,
-            and stores records persistently in PostgreSQL.
-          </p>
-          <div class="tech">Node.js • Express.js • PostgreSQL • Open Library API</div>
-          <a class="project-link" href="https://book-library-management-1-lfhp.onrender.com/" target="_blank" rel="noopener noreferrer">View Project →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-type">Full Stack Project</div>
-          <h3>📝 Blog Web Application</h3>
-          <p>
-            Developed a database-backed blog with create, read, update and delete operations
-            using a Node.js and PostgreSQL backend.
-          </p>
-          <div class="tech">Node.js • Express.js • PostgreSQL • CRUD</div>
-          <a class="project-link" href="https://blog-website-it47.onrender.com/" target="_blank" rel="noopener noreferrer">View Project →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up">
-          <div class="project-type">Frontend Project</div>
-          <h3>🌤️ Live Weather Web App</h3>
-          <p>
-            Integrated OpenWeather API to display real-time weather data for user-selected cities
-            through a responsive interface.
-          </p>
-          <div class="tech">HTML5 • CSS3 • JavaScript • OpenWeather API</div>
-          <a class="project-link" href="https://sharam96.github.io/Live-Weather/" target="_blank" rel="noopener noreferrer">View Project →</a>
-        </article>
-
-        <article class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-type">Personal Project</div>
-          <h3>🌐 Personal Portfolio</h3>
-          <p>
-            Designed and deployed a responsive portfolio showcasing technical skills,
-            development experience and selected projects.
-          </p>
-          <div class="tech">HTML5 • CSS3 • JavaScript • Responsive Design</div>
-          <a class="project-link" href="https://vishalsharmatech.info" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header" data-aos="fade-up">
-        <span>What I Bring</span>
-        <h2>Core Strengths</h2>
-      </div>
-
-      <div class="strengths-grid">
-        <div class="strength-card" data-aos="zoom-in">Problem Solving</div>
-        <div class="strength-card" data-aos="zoom-in">Team Collaboration</div>
-        <div class="strength-card" data-aos="zoom-in">Debugging</div>
-        <div class="strength-card" data-aos="zoom-in">Client Communication</div>
-        <div class="strength-card" data-aos="zoom-in">API Integration</div>
-        <div class="strength-card" data-aos="zoom-in">Business Automation</div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-header" data-aos="fade-up">
-        <span>Let's Connect</span>
-        <h2>Get In Touch</h2>
-        <p>
-          I am open to full-time developer roles, internships, freelance projects and business automation work.
-        </p>
-      </div>
-
-      <div class="contact-card" data-aos="fade-up">
-        <div id="form-container">
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbkrbdq" method="POST">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your Name" required />
+        <div class="skills-grid">
+          <div class="skill-group" data-aos="fade-right">
+            <h3>Frontend</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">DOM</span>
+              <span class="skill-tag">Responsive Design</span>
             </div>
+          </div>
 
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Your Email" required />
+          <div class="skill-group" data-aos="fade-left">
+            <h3>Backend & Databases</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">Webhooks</span>
+              <span class="skill-tag">CRUD</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Supabase</span>
             </div>
+          </div>
 
-            <div class="form-group">
-              <textarea name="message" placeholder="Your Message" required></textarea>
+          <div class="skill-group" data-aos="fade-right">
+            <h3>Automation & APIs</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Meta WhatsApp Cloud API</span>
+              <span class="skill-tag">WhatsApp Automation</span>
+              <span class="skill-tag">API Integration</span>
+              <span class="skill-tag">OpenWeather API</span>
+              <span class="skill-tag">Open Library API</span>
             </div>
+          </div>
 
-            <button class="btn btn-primary" type="submit" id="submitBtn">📨 Send Message</button>
-          </form>
+          <div class="skill-group" data-aos="fade-left">
+            <h3>Tools & Deployment</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Render</span>
+              <span class="skill-tag">Vercel</span>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-header" data-aos="fade-up">
+          <span>Selected Work</span>
+          <h2>Projects</h2>
+          <p>
+            Client websites, automation workflows and full-stack applications built for real-world requirements.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-type">Live Client Project</div>
+            <h3>🛒 EcomPlanet</h3>
+            <p>
+              Developed and deployed a responsive e-commerce website with structured product presentation,
+              mobile-first layouts and production deployment.
+            </p>
+            <div class="tech">HTML5 • CSS3 • JavaScript • Responsive Web Design</div>
+            <a class="project-link" href="https://ecomplanet.in" target="_blank" rel="noopener noreferrer">View Live Project →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="project-type">Live Client Project</div>
+            <h3>🎬 UGC on Scale</h3>
+            <p>
+              Built a conversion-focused website for AI UGC video services with pricing packages,
+              video-led sections, calls to action and WhatsApp lead generation.
+            </p>
+            <div class="tech">HTML5 • CSS3 • JavaScript • WhatsApp Integration</div>
+            <a class="project-link" href="https://ugconscale.in" target="_blank" rel="noopener noreferrer">View Live Project →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-type">Automation Project</div>
+            <h3>💬 WhatsApp Business Automation</h3>
+            <p>
+              Created a cloud-deployed automation workflow for instant replies, enquiry collection and lead
+              qualification using the Meta WhatsApp Cloud API and webhooks.
+            </p>
+            <div class="tech">Node.js • Express.js • REST APIs • Webhooks • Meta Cloud API • Render</div>
+            <a class="project-link" href="#contact">Request Demo →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="project-type">Team Project</div>
+            <h3>👥 HRMS System</h3>
+            <p>
+              Contributed to responsive UI development, REST API integration and PostgreSQL-backed employee
+              data workflows during the Uptoskills internship.
+            </p>
+            <div class="tech">HTML5 • CSS3 • JavaScript • Node.js • Express.js • PostgreSQL</div>
+            <a class="project-link" href="./about.html#experience">View Experience →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-type">Full Stack Project</div>
+            <h3>📚 Book Library Management System</h3>
+            <p>
+              Built an application that retrieves book data by ISBN, supports ratings and reviews,
+              and stores records persistently in PostgreSQL.
+            </p>
+            <div class="tech">Node.js • Express.js • PostgreSQL • Open Library API</div>
+            <a class="project-link" href="https://book-library-management-1-lfhp.onrender.com/" target="_blank" rel="noopener noreferrer">View Project →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="project-type">Full Stack Project</div>
+            <h3>📝 Blog Web Application</h3>
+            <p>
+              Developed a database-backed blog with create, read, update and delete operations
+              using a Node.js and PostgreSQL backend.
+            </p>
+            <div class="tech">Node.js • Express.js • PostgreSQL • CRUD</div>
+            <a class="project-link" href="https://blog-website-it47.onrender.com/" target="_blank" rel="noopener noreferrer">View Project →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up">
+            <div class="project-type">Frontend Project</div>
+            <h3>🌤️ Live Weather Web App</h3>
+            <p>
+              Integrated OpenWeather API to display real-time weather data for user-selected cities
+              through a responsive interface.
+            </p>
+            <div class="tech">HTML5 • CSS3 • JavaScript • OpenWeather API</div>
+            <a class="project-link" href="https://sharam96.github.io/Live-Weather/" target="_blank" rel="noopener noreferrer">View Project →</a>
+          </article>
+
+          <article class="project-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="project-type">Personal Project</div>
+            <h3>🌐 Personal Portfolio</h3>
+            <p>
+              Designed and deployed a responsive portfolio showcasing technical skills,
+              development experience and selected projects.
+            </p>
+            <div class="tech">HTML5 • CSS3 • JavaScript • Responsive Design</div>
+            <a class="project-link" href="https://vishalsharmatech.info" target="_blank" rel="noopener noreferrer">Visit Website →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header" data-aos="fade-up">
+          <span>What I Bring</span>
+          <h2>Core Strengths</h2>
+        </div>
+
+        <div class="strengths-grid">
+          <div class="strength-card" data-aos="zoom-in">Problem Solving</div>
+          <div class="strength-card" data-aos="zoom-in">Team Collaboration</div>
+          <div class="strength-card" data-aos="zoom-in">Debugging</div>
+          <div class="strength-card" data-aos="zoom-in">Client Communication</div>
+          <div class="strength-card" data-aos="zoom-in">API Integration</div>
+          <div class="strength-card" data-aos="zoom-in">Business Automation</div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header" data-aos="fade-up">
+          <span>Let's Connect</span>
+          <h2>Get In Touch</h2>
+          <p>
+            I am open to full-time developer roles, internships, freelance projects and business automation work.
+          </p>
+        </div>
+
+        <div class="contact-card" data-aos="fade-up">
+          <div id="form-container">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbkrbdq" method="POST">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required />
+              </div>
+
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required />
+              </div>
+
+              <div class="form-group">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit" id="submitBtn">📨 Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="availability">Available for Full-Time Opportunities</p>
+      <p class="footer-subtitle">Full Stack Development • Web Automation • Client Projects</p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/vishal-sharma-524715226/" target="_blank" rel="noopener noreferrer">
+          <img src="./linked-in.svg" alt="LinkedIn Profile" />
+        </a>
+        <a href="https://twitter.com/VishalS14120417" target="_blank" rel="noopener noreferrer">
+          <img src="./twitter.svg" alt="Twitter Profile" />
+        </a>
+        <a href="https://github.com/sharam96?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <img src="./github.svg" alt="GitHub Profile" />
+        </a>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <p class="availability">Available for Full-Time Opportunities</p>
-    <p class="footer-subtitle">Full Stack Development • Web Automation • Client Projects</p>
-
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/vishal-sharma-524715226/" target="_blank" rel="noopener noreferrer">
-        <img src="./linked-in.svg" alt="LinkedIn Profile" />
-      </a>
-      <a href="https://twitter.com/VishalS14120417" target="_blank" rel="noopener noreferrer">
-        <img src="./twitter.svg" alt="Twitter Profile" />
-      </a>
-      <a href="https://github.com/sharam96?tab=repositories" target="_blank" rel="noopener noreferrer">
-        <img src="./github.svg" alt="GitHub Profile" />
-      </a>
-    </div>
-
-    <p>© 2026 Vishal Sharma. All rights reserved.</p>
-  </footer>
+      <p>© 2026 Vishal Sharma. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
